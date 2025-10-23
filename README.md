@@ -12,15 +12,17 @@ This project is designed to cut down the busywork and cognitive load associated 
 
 Discovery Assistant aims to provide a generative AI-powered tool to assist facilitators through all three phases, starting with the most critical: the **planning** phase.
 
-## MVP (Current Version)
+---
 
-The current Minimum Viable Product (MVP) is a **diagnostic tool** that helps facilitators identify exactly where their team is stuck in the discovery process.
+## 💻 Current Status: Sprint 1 (The Core Diagnostic Tool)
 
-It guides the facilitator through the 7 steps of product discovery. By answering a series of "Yes/No" questions, the facilitator can pinpoint the exact problem they need to solve. When a "No" is encountered, the app provides a curated list of proven workshop tactics designed to solve that specific problem.
+The current version is a **client-side-only diagnostic tool** that helps facilitators identify exactly where their team is stuck in the discovery process.
+
+It guides the facilitator through the 7 steps of product discovery. When a user clicks "No" on a step (e.g., "Agreeing On Goals"), the application uses client-side JavaScript to filter a local `workshops.json` file and instantly recommends tactics tagged with the "Goals" step.
+
+This achieves the core goal—getting the right workshop to the facilitator—with zero backend complexity, API calls, or cost.
 
 ### The 7 Steps of Discovery
-
-This tool is based on the following 7-step methodology:
 
 1.  **🧭 Agreeing On Goals:** Do we know clearly what our team is working towards?
 2.  **🧠 Understanding The Problem:** Do we know the biggest problem we are solving?
@@ -32,24 +34,34 @@ This tool is based on the following 7-step methodology:
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 This project prioritizes speed, feasibility, and low cost. The stack is intentionally "lean" and avoids heavy frameworks and build steps.
 
 * **Frontend:** Semantic HTML5, Vanilla CSS3 (Flexbox/Grid), Vanilla JavaScript (ES6+).
-* **Data:** `workshops.json` (a flat-file "database" of curated workshop tactics).
-* **Hosting:** Vercel (Hobby Plan).
-* **Development:** Visual Studio Code, GitHub, and GitHub Copilot Pro.
+* **Backend:** Vercel (Hobby Plan) for hosting. Vercel Serverless Functions (Node.js) will be used for all secure backend API calls.
+* **AI & Data:**
+    * **Google AI Studio (Gemini Pro):** The generative AI engine for future smart features.
+    * **Local JSON:** `workshops.json` and `steps.json` act as the fast, free "database" for the core diagnostic tool.
+* **Tooling:** Visual Studio Code, GitHub, and GitHub Copilot Pro.
 
 ---
 
-## Future Roadmap (Phase 2)
+## 🚀 Project Roadmap
 
-The MVP establishes the core logic. The next phase will focus on integrating generative AI to make the assistant truly "smart."
+This project is being built in three distinct, iterative sprints.
 
-* **Generative AI Integration:** Connect to the Google Gemini Pro API to provide dynamic suggestions, help draft workshop plans, and synthesize notes.
-* **Secure API Calls:** Build Vercel Serverless Functions (Node.js) to securely handle all API calls to the AI.
-* **Feature Expansion:**
-    * **Agenda Builder:** An AI-powered tool to generate a complete workshop agenda based on goals and participant count.
-    * **Synthesis Assistant:** An interface to paste raw workshop notes (e.g., from a digital whiteboard) and have the AI synthesize them into key themes, action items, and a summary.
-    * **Facilitation Tools:** Add features to support the *Execution* phase, such as timers, prompts, and instructions.
+### Sprint 1: The Core Diagnostic Tool (Client-Side Only)
+
+* **Goal:** Build the complete 7-step diagnostic flow using only HTML, CSS, and client-side JavaScript.
+* **Status:** ✅ **Complete**
+
+### Sprint 2: The AI "Plumbing" (Backend Hook)
+
+* **Goal:** Build and deploy a Vercel Serverless Function (in the `/api` folder) to securely call the Google Gemini API. This is the critical step to move the API key off the client and onto a secure server environment.
+* **Status:** 🏃 **In Progress**
+
+### Sprint 3: The "Smart" AI Feature (Synthesis)
+
+* **Goal:** Integrate the Gemini API to provide true value-add *synthesis*, moving beyond the simple filtering of Sprint 1.
+* **Proposed Feature:** Add a **"Help me plan this session"** button. This will send the user's context (e.g., "I have 90 minutes, 5 participants") along with the JSON data for the recommended workshops to the AI. The AI will then read the workshop instructions and the user's context to generate a custom-tailored agenda.
