@@ -4,300 +4,299 @@
     "step": "Core Techniques",
     "duration": "30 mins",
     "about": "Put your ideas into a format that can explain itself.",
-    "description": "Having clearly articulated ideas in a consistent format makes them easier to understand and compare in a group. It also encourages the development of an idea by expanding on the details and function."
+    "description": "Having clearly articulated ideas in a consistent format makes them easier to understand and compare in a group. It also encourages the development of an idea by expanding on the detail and function.",
+    "instructions": [
+      "1. For each idea, draw a 'T' covering the height and width of a piece of paper.",
+      "2. On the right, give your idea a description that is easy to read. Bullet points are your friend.",
+      "3. Draw your idea on the left. It doesn't have to be a work of art. It just needs to help communicate your idea.",
+      "4. At the top, give your idea an inspiring title.",
+      "5. When everyone's completed their T-Bars, get them to stick them up on the wall and present them.",
+      "6. Prioritize the top three ideas with Dot Voting, or write the titles for each T-Bar on sticky notes for use on a Priority Mapping."
+    ]
   },
   {
     "name": "Idea Storm",
     "step": "Core Techniques",
     "duration": "N/A",
-    "about": "A group of workshops that put a problem through its paces by gathering lots of ideas, then narrowing down and evaluating them."
+    "about": "A group of workshops that put a problem through its paces by gathering lots of ideas, then narrowing down and evaluating them.",
+    "description": "This session takes the team through the gears of idea generation. It makes a blank piece of paper far less scary for the team, and ends with a short list of clearly communicated ideas that have been evaluated to ensure they are robust.",
+    "instructions": [
+      "1. Conduct T-Bar Format",
+      "2. Conduct How Might We ...",
+      "3. Conduct Mind Mapping",
+      "4. Conduct Wild Eights",
+      "5. Conduct Rose, Thorn, Bud"
+    ]
   },
   {
     "name": "Affinity Mapping",
     "step": "Core Techniques",
     "duration": "10 mins",
-    "about": "Also known as Theme Sort, it make sense of large amounts of information by clustering similar things together to find the theme."
+    "about": "Also known as Theme Sort, it make sense of large amounts of information by clustering similar things together to find the theme.",
+    "description": "When you have a lot of sticky notes, grouping them by similarity allows themes to emerge. This helps you make sense of a large amount of information, which means it's more easily prioritized. Tip: it's easier to Theme Sort as you go. If you try to do it afterwards, it becomes more difficult to organize the information.",
+    "instructions": [
+      "1. Make sure you've got a lot of wall space.",
+      "2. Whatever kind of information you have on your sticky notes, make sure there is one point per note.",
+      "3. Put the sticky notes on the wall, reading each one aloud as you do.",
+      "4. Each time you put up a new sticky note, ask yourself if it's related to or similar to a previous one. Place it near the existing note. If it's exactly the same, place it behind.",
+      "5. When all the sticky notes have been clustered, write a title for each on a larger sticky note. These are your themes.",
+      "6. Review the outliers; they may belong in smaller clusters.",
+      "7. Consider using Priority Mapping or Dot Voting to determine which theme is most important to the group."
+    ]
   },
   {
     "name": "Diagraming",
     "step": "Core Techniques",
     "duration": "30 mins - 4+ hours",
-    "about": "Gather insight from participants and map it with their assistance."
+    "about": "Gather insight from participants and map it with their assistance.",
+    "description": "Diagraming user flows, processes, journeys, experiences, services, and ecosystems with the people most familiar with them ensures the most accurate digram, allows the team to be on the same page. It also helps establish that these are living documents that will periodically need to be updated.",
+    "instructions": [
+      "1. Start by doing initial research and diagram an initial version from a high level, enough to provide structure and invite edits and additions.",
+      "2. Gather the subject matter experts most familiar with the topics in scope of the diagram and validate."
+    ]
   },
   {
     "name": "Difficult Behaviors",
     "step": "Core Techniques",
     "duration": "N/A",
-    "about": "Establishing a standard of behavior at the start of a session helps prevent disruptions."
+    "about": "Establishing a standard of behavior at the start of a session helps prevent disruptions.",
+    "description": "How to handle the three most common difficult behaviors in workshops: argumentative people, dominating people, and side meeting people.",
+    "instructions": [
+        "Argumentative people: A healthy argument is good for reaching a consensus, however, if it escalates to arguing over minuscule detail, or a refusal to compromise, the best course of action is to point out the unproductive nature of the argument. Putting the argument to the wider group can also help stem a heated argument by reaching a group consensus.",
+        "Dominating people: These types of people are usually poor listeners, and are unaware of the effect they have on others. Look for a place to intervene and ask for other’s opinions. You can neutralize this type of person by politely ignoring their efforts to speak.",
+        "Side meeting people: When people have a conversation amongst themselves, it can be highly disruptive. This can be quickly remedied by being quiet, and patiently waiting for them to realize everyone is waiting for them to stop talking."
+    ]
   },
   {
     "name": "Ice Breakers",
     "step": "Core Techniques",
     "duration": "10 mins",
-    "about": "Warm up the room so people feel more comfortable contributing to the session you are about to run."
+    "about": "Warm up the room so people feel more comfortable contributing to the session you are about to run.",
+    "description": "Ice breakers can feel a bit awkward, but running a session with an unfamiliar group who don't feel comfortable sharing ideas is far worse. By encouraging people to build rapport with each other, and setting the tone for an activity-led meeting, you can have a more productive session.",
+    "instructions": [
+      "1. Interesting questions: Ask the group to introduce themselves with their name and then something interesting about themselves, for example:\na. Given the choice of anyone in the world, whom would you want as a dinner guest?\nb. If you could wake up tomorrow having gained any one quality or ability, what would it be?",
+      "2. Get comfortable drawing: People will claim they can't draw when sketching out ideas. Show them they can with Squiggle Birds:\na. Ask them to draw random squiggles on the paper.\nb. Draw a small triangle on each of the squiggles.\nc. Draw two lines for feet. They've drawn some birds!",
+      "3. Introduce each other: Ask the group to speak to the person on their left. Inform them that in a few minutes you will introduce each other.",
+      "Tips: Don't spend too long using Ice Breakers. The meeting should warm up on its own naturally, but just one small exercise at the start can make all the difference."
+    ]
   },
   {
     "name": "Parking Lot",
     "step": "Core Techniques",
     "duration": "N/A",
-    "about": "Keep workshops on track by 'parking' irrelevant questions or topics."
+    "about": "Keep workshops on track by 'parking' irrelevant questions or topics.",
+    "description": "This technique helps ensure that important questions do not get lost and that the group can stay focused on the most relevant things. It's also a great way of shutting down unhelpful or tangential conversation.",
+    "instructions": [
+      "1. At the start of a meeting or workshop explain to the group that we are going to use a 'parking lot' to help us work more effectively.",
+      "2. Write a large P' at the top of some flip-chart paper and tape it to a prominent wall. Explain that whenever a point is raised or questions are asked that don't directly relate to the subject or session, you will write it on a sticky note, and stick that onto the flip-chart paper.",
+      "3. Use it throughout the meeting or workshop. Invite participants to add to the parking lot at any time.",
+      "4. As the meeting comes to a close, ensure that there is time to address the points and questions in the parking lot, with the whole group.",
+      "Tips: If there are any questions left unanswered, make sure that you or a group member follows them up."
+    ]
   },
   {
     "name": "Session Principles",
     "step": "Core Techniques",
     "duration": "10 mins",
-    "about": "Creating principles for a meeting or workshop is a 5-10 minute investment resulting in an engaged and more effective group of people."
+    "about": "Creating principles for a meeting or workshop is a 5-10 minute investment resulting in an engaged and more effective group of people.",
+    "description": "Bad habits have a tendency to create mundane, ineffective meetings that do not achieve their goals. Establishing and sticking to principles helps break those habits. Flexible principles create a container for an effective and productive meeting.",
+    "instructions": [
+      "1. Write \"Principles\" on a whiteboard or a flip-chart.",
+      "2. Ask the group for suggestions they can agree on that will make the session more effective.",
+      "3. Discuss each principle in brief to ensure there is a shared understanding and there are no differing interpretations or opinions.",
+      "4. Explain that throughout the session, it's okay to pause to ask questions, add to or amend the principles. Tip: it's important to make the group self-manage the principles. If the facilitator is the only enforcer of the rules, then the rules lose their power.",
+      "5. At the end, revisit the principles by asking: \"Are our principles still serving us?\" • \"Would we like to amend or adapt them in any way?\"",
+      "Example principles:",
+      "• No phones or laptops please!",
+      "• Listen more than you talk",
+      "• No questions are stupid",
+      "• Politely interrupt tangential conversation",
+      "• Share your snacks"
+    ]
   },
   {
     "name": "Session Wizard",
     "step": "Core Techniques",
     "duration": "20 mins",
-    "about": "Set a clear purpose and structure to your meeting."
+    "about": "Set a clear purpose and structure to your meeting.",
+    "description": "This tactic helps everyone understand the boundaries of the session to prevent any wasted time or unproductive tangents. It also gives the group a common ground to start from, as it's been agreed by everyone.",
+    "instructions": [
+      "1. At the start of the meeting, prepare the following points on a large surface:",
+      "• Intention: what is the intention, or purpose, of the meeting? In other words, why have it?",
+      "• Desired outcome(s): what specific outcomes should be achieved by the end of the meeting?",
+      "• Agenda: what activities will the group go through, in what order, to move towards the desired outcome?",
+      "• Roles: what roles or responsibilities need to be in place for the meeting to run smoothly? Who is facilitating, and who is participating? Who is documenting, and who is keeping track of the time? What do you expect of the participants?",
+      "• Rules: what guidelines will be in place during the meeting? Use Session Principles to help you.",
+      "• Time: including breaks, how much time is needed to achieve the desired outcomes? What time will the meeting end?",
+      "2. Invite everyone to ask questions or make suggestions for changes. Once the group is happy with the plan, begin the meeting."
+    ]
   },
   {
     "name": "Workshop Checklist",
     "step": "Core Techniques",
     "duration": "N/A",
-    "about": "Remind yourself what you need to do before, during and after a workshop."
+    "about": "Remind yourself what you need to do before, during and after a workshop.",
+    "description": "In our busy lives, it's easy to forget the basics. This checklist is a simple yet powerful reminder of the things you need to ensure a successful session. The checklist is comprised of three sections: what to do before, during and after a workshop. It gives you a practical and mental list that you can check off beforehand, and as you go.",
+    "instructions": [
+      "What to do before a workshop",
+      "Prepare (created board, sent links, set agenda)",
+      "Tech check (charger, adapter, mic, camera)",
+      "Digital Board (refreshments, temperature, chairs, wall space)",
+      "What to do during a workshop",
+      "Preamble (introductions and goal of the session)",
+      "Instruction (explain how we are going to do that)",
+      "Be yourself (your personality is your facilitation style)",
+      "Be flexible (stop or change course if it's not working)",
+      "What to do after a workshop",
+      "Gratitude (thank everyone for their contribution)",
+      "Photograph (record things that need documenting)",
+      "Feedback (ensure participants know how to share their thoughts and experiences)"
+    ]
   },
   {
     "name": "Democratic Discussion",
     "step": "Discussions",
     "duration": "1 hour",
-    "about": "Build a discussion agenda together and keep track of what's been discussed, and what needs to be discussed."
+    "about": "Build a discussion agenda together and keep track of what's been discussed, and what needs to be discussed.",
+    "description": "By giving everyone a say in what will be discussed helps to include a wider range of topics, so everyone will be invested in the meeting. The discussions are prioritized so you can make sure you talk about the most important things first.",
+    "instructions": [
+      "1. On a large surface, create a board with three columns: • To Discuss • Discussing • Discussed",
+      "2. Ask everyone to write what they want to talk about on sticky notes, and stick it in the \"To Discuss\" column.",
+      "3. Ask each person to sum up their topic. This is so people know what they are voting for in the next step.",
+      "4. Use Dot Voting to decide which topics to discuss.",
+      "5. Arrange the \"To Discuss\" sticky notes in descending order of votes they received.",
+      "6. Set a 10 minute timer, and start the discussion of the highest voted topic.",
+      "7. When you reach the limit, as a group decide whether to move on to the next topic or to continue the discussion for another 10 minutes.",
+      "8. Note any actions from the discussion with Who, What, When."
+    ]
   },
   {
     "name": "Mad, Sad, Glad Retro",
     "step": "Discussions",
     "duration": "1 hour",
-    "about": "Get a sense of a team's feelings towards a current or previous project."
+    "about": "Get a sense of a team's feelings towards a current or previous project.",
+    "description": "Understanding your team's emotions at any given time will help you be more effective as a group. Creating a safe space to air emotions is an important aspect of building trust in a team.",
+    "instructions": [
+      "1. On a large surface, create three columns with \"Mad\", \"Sad\", and \"Glad\".\n• Mad: \"What are you mad about?\"\n• Sad: \"What are you sad about?\"\n• Glad: \"What are you glad about?\"",
+      "2. On sticky notes, ask each person to spend five minutes writing answers to: \"what are you mad about?\"",
+      "3. In turn, have each person post their sticky notes in the 'Mad\" column, and briefly talk through each one Affinity Mapping as you go.",
+      "4. Do the same for the last two columns.",
+      "5. Save time at the end of the meeting for discussion. This is a chance to reflect on all the input.",
+      "6. Prioritize the top three things to action with Dot Voting. Consider using Who, What, When to ensure there is commitment to the actions."
+    ]
   },
   {
     "name": "Start, Stop, Continue Retro",
     "step": "Discussions",
     "duration": "1 hour",
-    "about": "Get balanced, actionable feedback from a group on a topic, project or team."
+    "about": "Get balanced, actionable feedback from a group on a topic, project or team.",
+    "description": "A productive way to encourage a group to optimize and improve a situation with clear actions, used midway through or at the end of a project. It can also be used for giving personal feedback.",
+    "instructions": [
+      "1. On a large surface, create three columns with \"Start,\" \"Stop,\" and \"Continue\".\n• Start: \"What should we start doing?\"\n• Stop: \"What should we stop doing?\"\n• Continue: \"What should we continue doing?\"",
+      "2. On sticky notes, ask each person to spend five minutes writing answers to: \"what should we start doing?\"",
+      "3. In turn, have each person post their sticky notes in the \"Start\" column, and briefly talk through each one Affinity Mapping as you go.",
+      "4. Do the same for the next two columns.",
+      "5. Save some time at the end of the meeting for discussions. This is a chance to reflect on all the input.",
+      "6. Priorities the top three things to action with Dot Voting. Consider using Who, What, When to ensure there is commitment to the actions."
+    ]
   },
   {
     "name": "Three Little Pigs Retro",
     "step": "Discussions",
     "duration": "1 hour",
-    "about": "Reflect on what's going well, and what could be improved with the help of a childhood fable."
+    "about": "Reflect on what's going well, and what could be improved with the help of a childhood fable.",
+    "description": "It's all too easy for a reflective meeting to descend into unhelpful huffing and puffing. Framing a discussion with the lens of stability, inspired by this classic folktale, helps highlight what problems need to be solved, whilst celebrating what's going well.",
+    "instructions": [
+      "1. On a large surface, create three columns: \nMade of straw: Weak or could fall apart—High risk. \nMade of sticks: Somewhat rigid—Medium risk. \nMade of stone: Immovable—Low risk.",
+      "2. Explain to the group the story of the Three Little Pigs, if they aren't familiar with it.",
+      "3. On sticky notes, ask each person to spend two minutes writing answers to the first column. What aspects of your project, team, or anything work related are \"made of straw\" (weak, or could fall apart easily)?",
+      "4. In turn, have each person post their sticky notes in the straw\" column, and briefly talk through each one. Affinity Mapping as you go.",
+      "5. Do the same for the next two columns.",
+      "6. Save time at the end of the meeting for discussion. This is a chance to reflect on all the input.",
+      "7. Prioritize the top three things to action with Dot Voting. Consider using Who, What, When to ensure there is commitment to the actions."
+    ]
   },
   {
     "name": "Fishbowl",
     "step": "Discussions",
     "duration": "1 hour",
-    "about": "A self-facilitating, inclusive discussion with a large group of people."
+    "about": "A self-facilitating, inclusive discussion with a large group of people.",
+    "description": "Fishbowl prevents the loudest voice in the room from dominating a discussion. It allows the entire group to participate and lessens distinctions between the speakers and the audience.",
+    "instructions": [
+      "1. Arrange three chairs in the middle of a room.",
+      "2. Invite the group to fill the 'audience' seats, and have two people sit on two of the seats in the middle, leaving one empty. These two people will begin the discussion.",
+      "3. Agree on the topic of discussion. Consider using the second step of Democratic Discussion to find out what people want to discuss.",
+      "4. Explain that anyone, at any point in time, can come and sit in the unoccupied chair in the middle and join the discussion. Then explain that when this happens, someone who is already participating in the discussion must voluntarily leave the \"fishbowl\" and free up a chair.",
+      "5. Set a time limit for the topic and instruct the participants to begin the discussion."
+    ]
   },
   {
     "name": "Newspaper Headline",
     "step": "Goals",
     "duration": "30 mins",
-    "about": "Think about the company or a project's future by predicting what the press might say on their front pages."
+    "about": "Think about the company or a project's future by predicting what the press might say on their front pages.",
+    "description": "Giving everyone a chance to dream about the future brings to light the true goals of the organization. From the predictions, you start to define the problems to pursue and which direction to move in.",
+    "instructions": [
+      "1. Get each person to draw the template below on a portrait piece of paper.",
+      "2. Tell the group they are going to predict the future. Explain each section and ask them to complete it.",
+      "3. Once complete, encourage everyone to share their future vision. Try to find common themes and reflect on how these might be condensed into one common goal.",
+      "Break down your predictions as follows:",
+      "• Headline: Describe the extraordinary success of the company in one catchy, attention-grabbing headline.",
+      "• Subheading: Reveal more of what the story is about.",
+      "• Sketch: Draw something that supports the headline.",
+      "• Report: In bullet points, detail the highlights of the story.",
+      "• Quotes: Include some fictional quotes from people about the accomplishment."
+    ]
   },
   {
     "name": "Sailboat",
     "step": "Goals",
     "duration": "1 hour",
-    "about": "Find out what your goals really are, the reasons behind them and what's stopping you from achieving them."
+    "about": "Find out what your goals really are, the reasons behind them and what's stopping you from achieving them.",
+    "description": "This exercise brings together teams and stakeholders to gain a shared understanding of their goals, drivers and barriers. You can find out what is slowing you down, or if the purpose or goals are not quite right.",
+    "instructions": [
+      "1. On a large surface, draw a boat out at sea this boat represents the team or the project.",
+      "2. Next, draw an island - this represents the goal. Ask the group to write down what they believe the team or project's goals are on sticky notes.",
+      "3. Ask each member to share what they've written as you Affinity Mapping them near the island.",
+      "4. If you haven't already, draw a sail on the boat. Explain that this represents what's driving you towards your goal. Ask the group to write down the drivers.",
+      "5. Share and Theme Sort them near the boat.",
+      "6. Draw an anchor coming from the boat. Explain this represents the barriers to the goal. Ask the group to write down what's slowing or stopping you achieving the goals.",
+      "7. Share and Affinity Mapping them near the anchor.",
+      "8. Dot Voting the goals to get an understanding of what everyone believes is most important to work towards.",
+      "9. Finally, Dot Voting the barriers to understand what the most important problem to solve is."
+    ]
   },
   {
     "name": "G. R. O. W.",
     "step": "Goals",
     "duration": "1-2 hours",
-    "about": "Create a plan for how to achieve a specific goal."
+    "about": "Create a plan for how to achieve a specific goal.",
+    "description": "This exercise helps you set a goal in the context of where you are now, what obstacles you face, and what tangible things you can actually do to achieve it.",
+    "instructions": [
+      "1. Create four columns on a large surface and write Goal, Reality, Options and Will as headings.",
+      "2. Agree on a Goal and write it in the first column. Do this by writing in silence on sticky notes. Then Affinity Mapping and Dot Voting\n• Is this goal targeting a specific area?\n• How will we measure progress towards this goal?",
+      "3. Do the same for Reality by answering the following:\n• What is our starting point?\n• What is happening now (what, who, when and how often)?\n• What is the effect or result of this?\n• Have we already taken any steps towards the goal?\n• Does this goal conflict with any other goals or objectives that we have?",
+      "4. Explore the 'Options' - Wild Eights is a helpful tactic to generate lots of ideas quickly.\n• What else could we do?\n• What if certain constraints were removed?\n• Would that change things?\n• What are the advantages and disadvantages of each option?\n• What factors or considerations will we use to weigh the options?\n• What do we need to stop doing in order to achieve this goal?\n• What obstacles stand in our way?",
+      "5. Establish \"Will\" by committing to action some of the options. Use Who, What, When to help you clarify."
+    ]
   },
   {
     "name": "Objectives & Key Results",
     "step": "Goals",
     "duration": "1 hour",
-    "about": "Create radical focus for your team by agreeing on an objective and actively measuring progress towards it."
-  },
-  {
-    "name": "Sticky Steps",
-    "step": "Goals",
-    "duration": "30 mins",
-    "about": "Start with your goal and work backwards to give you a clear path to get there. With a clear step-by-step plan, you can turn seemingly unachievable or difficult goals into tangible realities."
-  },
-  {
-    "name": "Roles and Responsibilities",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Understand each other's roles better, and learn who is responsible for what."
-  },
-  {
-    "name": "Skills Market",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Learn about each other's skills, abilities and ambitions, so you can understand how to help each other grow."
-  },
-  {
-    "name": "Stakeholder Mapping",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Identify a project's stakeholders. Anyone who can significantly impact a decision, or who may be impacted by it, needs to be considered."
-  },
-  {
-    "name": "Assumption Collecting",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Collect assumptions that reflect what you and your team think might be true about the project."
-  },
-  {
-    "name": "Journey Mapping",
-    "step": "Understanding",
-    "duration": "1-2 hours",
-    "about": "Identify areas of improvement in a user's experience by creating a map of it."
-  },
-  {
-    "name": "Five Whys",
-    "step": "Understanding",
-    "duration": "30 mins - 1 hour",
-    "about": "When faced with a problem that is affecting a project, channel your inner inquisitive toddler and ask \"why?\" five times to get to the root cause."
-  },
-  {
-    "name": "Empathy Mapping",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Empathize with your audience so you can make better design decisions."
-  },
-  {
-    "name": "Hopes & Fears",
-    "step": "Understanding",
-    "duration": "30 mins",
-    "about": "Understand your team's expectations and hesitations so you're all on the same page before you take flight on a new journey."
-  },
-  {
-    "name": "Prototype Persona",
-    "step": "Understanding",
-    "duration": "1 hour",
-    "about": "Try to predict who is using (or will use) your product and why, so you can start testing with the right people."
-  },
-  {
-    "name": "Service Mapping",
-    "step": "Understanding",
-    "duration": "1-2 hours",
-    "about": "Create a map of a service to understand it better, and identify opportunities for improving processes."
-  },
-  {
-    "name": "Hypothesis Statement",
-    "step": "Framing",
-    "duration": "30 mins",
-    "about": "Treat your assumptions as experiments by turning them into testable hypotheses."
-  },
-  {
-    "name": "Problem Statement",
-    "step": "Framing",
-    "duration": "1 hour",
-    "about": "A statement that captures the project's goals, problems, and measurable success criteria."
-  },
-  {
-    "name": "How Might We…",
-    "step": "Framing",
-    "duration": "1 hour",
-    "about": "Transform a problem or observation into a solvable question."
-  },
-  {
-    "name": "Value Proposition",
-    "step": "Framing",
-    "duration": "1 hour",
-    "about": "Clearly articulate the point of your service or product, who it's for and what makes it unique."
-  },
-  {
-    "name": "Mind Mapping",
-    "step": "Ideating",
-    "duration": "30 mins",
-    "about": "Turn all your thoughts into an interconnected map so you have stimulus for idea generation."
-  },
-  {
-    "name": "Wild Eights",
-    "step": "Ideating",
-    "duration": "30 mins",
-    "about": "Generate a lot of ideas, quickly. Eight wild ideas in eight minutes!"
-  },
-  {
-    "name": "Storyboard",
-    "step": "Ideating",
-    "duration": "1-2 hours",
-    "about": "Draw your idea as a sequence of moments and real world interactions to better understand how it works."
-  },
-  {
-    "name": "Reverse Brainstorm",
-    "step": "Ideating",
-    "duration": "1 hour",
-    "about": "Think of the worst, most despicable ideas possible, then reverse them to find a solution."
-  },
-  {
-    "name": "Round Robin",
-    "step": "Ideating",
-    "duration": "30 mins",
-    "about": "Evolve each other's ideas quickly. For example, when you already have a rough outline of an idea, but you're ready for it to evolve into something more robust."
-  },
-  {
-    "name": "Premortem",
-    "step": "Evaluating",
-    "duration": "1 hour",
-    "about": "Think about all the ways something might go wrong, so you can effectively plan to stop it from happening."
-  },
-  {
-    "name": "Rose, Thorn, Bud",
-    "step": "Evaluating",
-    "duration": "30 mins",
-    "about": "Evaluate an idea, project or process, identifying positives, negatives and opportunities."
-  },
-  {
-    "name": "Heart, Head, Hand",
-    "step": "Evaluating",
-    "duration": "30 mins",
-    "about": "Evaluate the usefulness, emotional resonance, and business value of an idea."
-  },
-  {
-    "name": "Idea Beetle",
-    "step": "Evaluating",
-    "duration": "30 mins",
-    "about": "Evaluate if your idea is strong and has \"legs\", or if it needs more thinking."
-  },
-  {
-    "name": "SWOT Analysis",
-    "step": "Evaluating",
-    "duration": "1-2 hours",
-    "about": "Identify strengths, weaknesses, opportunities and threats for a desired end-state."
-  },
-  {
-    "name": "Assumption Mapping",
-    "step": "Prioritizing",
-    "duration": "1 hour",
-    "about": "Prioritise your assumptions based on certainty and risk."
-  },
-  {
-    "name": "Priority Mapping",
-    "step": "Prioritizing",
-    "duration": "30 mins - 1 hour",
-    "about": "Find out where to focus based on criteria important to the group."
-  },
-  {
-    "name": "Who, What, When",
-    "step": "Prioritizing",
-    "duration": "10 mins",
-    "about": "Leave a session with a clear plan of goals and deadlines."
-  },
-  {
-    "name": "$100",
-    "step": "Prioritizing",
-    "duration": "20 mins",
-    "about": "Prioritize what ideas or features to focus on by deciding where to invest $100."
-  },
-  {
-    "name": "Dot Voting",
-    "step": "Prioritizing",
-    "duration": "5 mins",
-    "about": "Democratically make decisions as a group. Eliminate all but one thing, or fund the top three things."
-  },
-  {
-    "name": "Impact Effort Mapping",
-    "step": "Prioritizing",
-    "duration": "30 mins - 1 hour",
-    "about": "Group together ideas by how much effort they require to create, and by how much impact they'll have on your goal."
+    "about": "Create radical focus for your team by agreeing on an objective and actively measuring progress towards it.",
+    "description": "The problem with most goals is that distractions get in the way of achieving them. The OKR framework is designed to give you \"radical focus\" on achieving an objective. It can be used personally, within a team, or at an organizational level.\nWho should run an OKR workshop: An OKR workshop is an ideal way for start-ups, product teams and executives to set clear, attainable objectives for and with their teams.",
+    "instructions": [
+      "1. Before the meeting, invite everyone to submit their top objective for the team to achieve in the next quarter. An objective is a qualitative and aspirational \"end-state\". Consider using Sailboat or Newspaper Headline to help the team create an objective. For example: \"Create an accessible, user-friendly native app that delights first-time users.\"",
+      "2. Put each objective on a sticky note, put them up on a wall and then Affinity Mapping.",
+      "3. Debate and use Dot Voting to determine your primary objective. Having two objectives defeats the purpose of \"radical focus\"",
+      "4. List as many metrics as you can in 10 minutes. They should show you're closer to achieving the objective. For example: Number of sign-ups, net-promoter score, positive feedback received.",
+      "5. Use Affinity Mapping and Dot Voting to group and decide on three metrics.",
+      "6. Turn your three metrics into Key Results by setting specific, quantitative targets. For example: Get x number of sign ups a month, achieve a NPS score of x.",
+      "7. Agree on specific numbers for each Key Result. You should feel like you have a fifty-fifty chance of achieving each one in the next quarter. | For example: Get 2,500 sign-ups a month (5/10).",
+      "How do you set a good OKR?\n1. A good OKR expresses a clear hypothesis and uses precise language to powerfully steer your daily activities.\n2. Keep the OKR workshop small and focused.\n3. Start with a big, open objective and then add enough detail so it's completely clear what you want and how you'll get there.",
+      "How to determine if you are on the right track:\n• Is the Objective big and aspirational (is it worth getting out of bed for)?\n• Do the Key Results indicate progress towards the objective?\n• Are the Key Results clear and unambiguous?\n• Are the Key Results easy to measure?\n• Are they actually results and not just \"tasks to do\"?\n• Are they tough and inspiring?\n• Are you happy to measure your team's success this quarter based on reaching 70-90% of this goal, and nothing else.?",
+      "How to create and use the OKR template board\nThe OKR Board is the magic sauce that makes your team's objectives work. It is a weekly conversation tool to check into your objectives, check team health and manage priorities and upcoming tasks. Use the board as a stand-up meeting every Monday, and briefly go over each quadrant. Fridays should be used to celebrate what the team has achieved toward the objective. For OKRs to be successful, this regular rhythm of checking in is vital. Without it, focus and alignment is lost."
+    ]
   }
 ]
