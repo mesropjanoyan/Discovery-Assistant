@@ -1,0 +1,37 @@
+📌
+Assumption Mapping
+
+
+Step
+📌–Prioritizing
+
+Duration
+1 hour
+
+Session
+2–Project Kick-off
+
+About
+Prioritise your assumptions based on certainty and risk.
+
+Type
+
+Description
+Identifying your riskiest and most unknown assumptions gives you clear picture on where to focus your energy. It's safe to assume that this is one of the most valuable tactics to have in your back pocket.
+Before:
+Make sure you have assumptions to prioritize by running 🧠Assumption Collecting beforehand.
+During:
+After:
+Afterwards, use 🖼️Hypothesis Statement to turn your assumptions into a testable format.
+Instructions
+	1	Plot your assumptions on a 📌Priority Mapping with Certainty and Risk on the axes:
+	◦	High risk, known: Make a plan to overcome the risk
+	◦	Low risk, known: Defer but monitor if risk increases
+	◦	High risk, unknown: Investigate immediately
+	◦	Low risk, unknown: Evaluate your knowledge, what you find out may increase the perceived risk.
+	2	Plot each assumption on the map, asking the group:
+	◦	How bad would it be if we were wrong about this?
+	◦	How much understanding do we currently have?
+	3	Tip: it can help to ask "is this more or less risky or unknown than this one?" to get a sense of relativity between items.
+	3	Continue this way until you have plotted all of your assumptions on the map.
+	4	Turn your riskiest and most unknown assumptions into a 🖼️Hypothesis Statement in order to start the process of validating them.
