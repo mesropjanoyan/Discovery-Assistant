@@ -4,7 +4,7 @@ Discovery Assistant is an AI-powered digital product discovery assistant designe
 
 ## About The Project
 
-This project is designed to cut down the "busywork" and cognitive load associated with planning and running effective product discovery sessions. It's built on the principle that a great workshop, like a film, has three distinct phases:
+This project is designed to cut down the busywork and cognitive load associated with planning and running effective product discovery sessions. It's built on the principle that a great workshop, like a film, has three distinct phases:
 
 1.  **Pre-Facilitation (Planning):** What's our goal? What's the problem? Who needs to be there?
 2.  **Facilitation (Execution):** How do we run the session effectively?
