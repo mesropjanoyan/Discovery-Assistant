@@ -1,1 +1,303 @@
-[]
+[
+  {
+    "name": "T-Bar Format",
+    "step": "Core Techniques",
+    "duration": "30 mins",
+    "about": "Put your ideas into a format that can explain itself.",
+    "description": "Having clearly articulated ideas in a consistent format makes them easier to understand and compare in a group. It also encourages the development of an idea by expanding on the details and function."
+  },
+  {
+    "name": "Idea Storm",
+    "step": "Core Techniques",
+    "duration": "N/A",
+    "about": "A group of workshops that put a problem through its paces by gathering lots of ideas, then narrowing down and evaluating them."
+  },
+  {
+    "name": "Affinity Mapping",
+    "step": "Core Techniques",
+    "duration": "10 mins",
+    "about": "Also known as Theme Sort, it make sense of large amounts of information by clustering similar things together to find the theme."
+  },
+  {
+    "name": "Diagraming",
+    "step": "Core Techniques",
+    "duration": "30 mins - 4+ hours",
+    "about": "Gather insight from participants and map it with their assistance."
+  },
+  {
+    "name": "Difficult Behaviors",
+    "step": "Core Techniques",
+    "duration": "N/A",
+    "about": "Establishing a standard of behavior at the start of a session helps prevent disruptions."
+  },
+  {
+    "name": "Ice Breakers",
+    "step": "Core Techniques",
+    "duration": "10 mins",
+    "about": "Warm up the room so people feel more comfortable contributing to the session you are about to run."
+  },
+  {
+    "name": "Parking Lot",
+    "step": "Core Techniques",
+    "duration": "N/A",
+    "about": "Keep workshops on track by 'parking' irrelevant questions or topics."
+  },
+  {
+    "name": "Session Principles",
+    "step": "Core Techniques",
+    "duration": "10 mins",
+    "about": "Creating principles for a meeting or workshop is a 5-10 minute investment resulting in an engaged and more effective group of people."
+  },
+  {
+    "name": "Session Wizard",
+    "step": "Core Techniques",
+    "duration": "20 mins",
+    "about": "Set a clear purpose and structure to your meeting."
+  },
+  {
+    "name": "Workshop Checklist",
+    "step": "Core Techniques",
+    "duration": "N/A",
+    "about": "Remind yourself what you need to do before, during and after a workshop."
+  },
+  {
+    "name": "Democratic Discussion",
+    "step": "Discussions",
+    "duration": "1 hour",
+    "about": "Build a discussion agenda together and keep track of what's been discussed, and what needs to be discussed."
+  },
+  {
+    "name": "Mad, Sad, Glad Retro",
+    "step": "Discussions",
+    "duration": "1 hour",
+    "about": "Get a sense of a team's feelings towards a current or previous project."
+  },
+  {
+    "name": "Start, Stop, Continue Retro",
+    "step": "Discussions",
+    "duration": "1 hour",
+    "about": "Get balanced, actionable feedback from a group on a topic, project or team."
+  },
+  {
+    "name": "Three Little Pigs Retro",
+    "step": "Discussions",
+    "duration": "1 hour",
+    "about": "Reflect on what's going well, and what could be improved with the help of a childhood fable."
+  },
+  {
+    "name": "Fishbowl",
+    "step": "Discussions",
+    "duration": "1 hour",
+    "about": "A self-facilitating, inclusive discussion with a large group of people."
+  },
+  {
+    "name": "Newspaper Headline",
+    "step": "Goals",
+    "duration": "30 mins",
+    "about": "Think about the company or a project's future by predicting what the press might say on their front pages."
+  },
+  {
+    "name": "Sailboat",
+    "step": "Goals",
+    "duration": "1 hour",
+    "about": "Find out what your goals really are, the reasons behind them and what's stopping you from achieving them."
+  },
+  {
+    "name": "G. R. O. W.",
+    "step": "Goals",
+    "duration": "1-2 hours",
+    "about": "Create a plan for how to achieve a specific goal."
+  },
+  {
+    "name": "Objectives & Key Results",
+    "step": "Goals",
+    "duration": "1 hour",
+    "about": "Create radical focus for your team by agreeing on an objective and actively measuring progress towards it."
+  },
+  {
+    "name": "Sticky Steps",
+    "step": "Goals",
+    "duration": "30 mins",
+    "about": "Start with your goal and work backwards to give you a clear path to get there. With a clear step-by-step plan, you can turn seemingly unachievable or difficult goals into tangible realities."
+  },
+  {
+    "name": "Roles and Responsibilities",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Understand each other's roles better, and learn who is responsible for what."
+  },
+  {
+    "name": "Skills Market",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Learn about each other's skills, abilities and ambitions, so you can understand how to help each other grow."
+  },
+  {
+    "name": "Stakeholder Mapping",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Identify a project's stakeholders. Anyone who can significantly impact a decision, or who may be impacted by it, needs to be considered."
+  },
+  {
+    "name": "Assumption Collecting",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Collect assumptions that reflect what you and your team think might be true about the project."
+  },
+  {
+    "name": "Journey Mapping",
+    "step": "Understanding",
+    "duration": "1-2 hours",
+    "about": "Identify areas of improvement in a user's experience by creating a map of it."
+  },
+  {
+    "name": "Five Whys",
+    "step": "Understanding",
+    "duration": "30 mins - 1 hour",
+    "about": "When faced with a problem that is affecting a project, channel your inner inquisitive toddler and ask \"why?\" five times to get to the root cause."
+  },
+  {
+    "name": "Empathy Mapping",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Empathize with your audience so you can make better design decisions."
+  },
+  {
+    "name": "Hopes & Fears",
+    "step": "Understanding",
+    "duration": "30 mins",
+    "about": "Understand your team's expectations and hesitations so you're all on the same page before you take flight on a new journey."
+  },
+  {
+    "name": "Prototype Persona",
+    "step": "Understanding",
+    "duration": "1 hour",
+    "about": "Try to predict who is using (or will use) your product and why, so you can start testing with the right people."
+  },
+  {
+    "name": "Service Mapping",
+    "step": "Understanding",
+    "duration": "1-2 hours",
+    "about": "Create a map of a service to understand it better, and identify opportunities for improving processes."
+  },
+  {
+    "name": "Hypothesis Statement",
+    "step": "Framing",
+    "duration": "30 mins",
+    "about": "Treat your assumptions as experiments by turning them into testable hypotheses."
+  },
+  {
+    "name": "Problem Statement",
+    "step": "Framing",
+    "duration": "1 hour",
+    "about": "A statement that captures the project's goals, problems, and measurable success criteria."
+  },
+  {
+    "name": "How Might We…",
+    "step": "Framing",
+    "duration": "1 hour",
+    "about": "Transform a problem or observation into a solvable question."
+  },
+  {
+    "name": "Value Proposition",
+    "step": "Framing",
+    "duration": "1 hour",
+    "about": "Clearly articulate the point of your service or product, who it's for and what makes it unique."
+  },
+  {
+    "name": "Mind Mapping",
+    "step": "Ideating",
+    "duration": "30 mins",
+    "about": "Turn all your thoughts into an interconnected map so you have stimulus for idea generation."
+  },
+  {
+    "name": "Wild Eights",
+    "step": "Ideating",
+    "duration": "30 mins",
+    "about": "Generate a lot of ideas, quickly. Eight wild ideas in eight minutes!"
+  },
+  {
+    "name": "Storyboard",
+    "step": "Ideating",
+    "duration": "1-2 hours",
+    "about": "Draw your idea as a sequence of moments and real world interactions to better understand how it works."
+  },
+  {
+    "name": "Reverse Brainstorm",
+    "step": "Ideating",
+    "duration": "1 hour",
+    "about": "Think of the worst, most despicable ideas possible, then reverse them to find a solution."
+  },
+  {
+    "name": "Round Robin",
+    "step": "Ideating",
+    "duration": "30 mins",
+    "about": "Evolve each other's ideas quickly. For example, when you already have a rough outline of an idea, but you're ready for it to evolve into something more robust."
+  },
+  {
+    "name": "Premortem",
+    "step": "Evaluating",
+    "duration": "1 hour",
+    "about": "Think about all the ways something might go wrong, so you can effectively plan to stop it from happening."
+  },
+  {
+    "name": "Rose, Thorn, Bud",
+    "step": "Evaluating",
+    "duration": "30 mins",
+    "about": "Evaluate an idea, project or process, identifying positives, negatives and opportunities."
+  },
+  {
+    "name": "Heart, Head, Hand",
+    "step": "Evaluating",
+    "duration": "30 mins",
+    "about": "Evaluate the usefulness, emotional resonance, and business value of an idea."
+  },
+  {
+    "name": "Idea Beetle",
+    "step": "Evaluating",
+    "duration": "30 mins",
+    "about": "Evaluate if your idea is strong and has \"legs\", or if it needs more thinking."
+  },
+  {
+    "name": "SWOT Analysis",
+    "step": "Evaluating",
+    "duration": "1-2 hours",
+    "about": "Identify strengths, weaknesses, opportunities and threats for a desired end-state."
+  },
+  {
+    "name": "Assumption Mapping",
+    "step": "Prioritizing",
+    "duration": "1 hour",
+    "about": "Prioritise your assumptions based on certainty and risk."
+  },
+  {
+    "name": "Priority Mapping",
+    "step": "Prioritizing",
+    "duration": "30 mins - 1 hour",
+    "about": "Find out where to focus based on criteria important to the group."
+  },
+  {
+    "name": "Who, What, When",
+    "step": "Prioritizing",
+    "duration": "10 mins",
+    "about": "Leave a session with a clear plan of goals and deadlines."
+  },
+  {
+    "name": "$100",
+    "step": "Prioritizing",
+    "duration": "20 mins",
+    "about": "Prioritize what ideas or features to focus on by deciding where to invest $100."
+  },
+  {
+    "name": "Dot Voting",
+    "step": "Prioritizing",
+    "duration": "5 mins",
+    "about": "Democratically make decisions as a group. Eliminate all but one thing, or fund the top three things."
+  },
+  {
+    "name": "Impact Effort Mapping",
+    "step": "Prioritizing",
+    "duration": "30 mins - 1 hour",
+    "about": "Group together ideas by how much effort they require to create, and by how much impact they'll have on your goal."
+  }
+]
