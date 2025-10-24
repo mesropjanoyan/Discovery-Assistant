@@ -18,7 +18,7 @@ Discovery Assistant aims to provide a generative AI-powered tool to assist facil
 
 The current version is a **client-side-only diagnostic tool** that helps facilitators identify exactly where their team is stuck in the discovery process.
 
-It guides the facilitator through the 7 steps of product discovery. When a user clicks "No" on a step (e.g., "Agreeing On Goals"), the application uses client-side JavaScript to filter a local `sessions.json` file and instantly recommends tactics tagged with the "Goals" step.
+It guides the facilitator through the 7 steps of product discovery. When a user clicks "No" on a step (e.g., "Agreeing On Goals"), the application uses client-side JavaScript to filter a local `activities.json` file and instantly recommends tactics tagged with the "Goals" step.
 
 This achieves the core goal—getting the right workshop to the facilitator—with zero backend complexity, API calls, or cost.
 
@@ -42,7 +42,7 @@ This project prioritizes speed, feasibility, and low cost. The stack is intentio
 * **Backend:** Vercel (Hobby Plan) for hosting. Vercel Serverless Functions (Node.js) will be used for all secure backend API calls.
 * **AI & Data:**
     * **Google AI Studio (Gemini Pro):** The generative AI engine for future smart features.
-    * **Local JSON:** `sessions.json` and `steps.json` act as the fast, free "database" for the core diagnostic tool.
+    * **Local JSON:** `activities.json` and `steps.json` act as the fast, free "database" for the core diagnostic tool.
 * **Tooling:** Visual Studio Code, GitHub, and GitHub Copilot Pro.
 
 ---
