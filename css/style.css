@@ -65,6 +65,13 @@ header, footer {
     display: none;
 }
 
+/* ADD THIS NEW CLASS */
+/* This surgically hides just the interactive parts of the tool */
+.form-hidden #answer-form,
+.form-hidden #controls {
+    display: none;
+}
+
 /* --- 4. Diagnostic Card (#step-card) --- */
 #step-card {
     border-bottom: 1px solid var(--border-color);

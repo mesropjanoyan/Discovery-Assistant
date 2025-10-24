@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {object} failedStep - The step object from allSteps
      */
     function showResults(failedStep) {
-        // Hide diagnostic tool, show results
-        diagnosticTool.classList.add('hidden');
+        // Hide form elements, show results
+        diagnosticTool.classList.add('form-hidden'); // <-- USE NEW CLASS
         resultsSection.classList.remove('hidden');
         
         // Get the key we're looking for, e.g., "framing"
@@ -188,21 +188,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Shows final summary when user completes all 7 steps
+     * Displays a final "complete" message when all 7 steps are
+     * answered confidently.
      */
     function showFinalSummary() {
-        diagnosticTool.classList.add('hidden');
+        // Hide the form, but keep the summary and final step card visible
+        diagnosticTool.classList.add('form-hidden');
+
+        // Show the results section to display our message
         resultsSection.classList.remove('hidden');
         
+        // Update the preamble text
         const preamble = document.getElementById('results-preamble');
-        preamble.textContent = '🎉 Congratulations! You\'ve completed the diagnostic. You\'re ready to move forward.';
-        
+        preamble.textContent = "Congratulations!";
+
+        // Clear any previous results and show the success message
         resultsList.innerHTML = `
-            <div class="success-message">
-                <h3>All Steps Completed</h3>
-                <p>You have clear answers and high confidence across all 7 discovery steps.</p>
-                <p>Use the "Export Plan" button below to save your responses.</p>
-            </div>
+            <p style="font-size: 1.1rem; color: var(--text-dark);">
+                You've confidently completed all 7 steps of the diagnostic.
+                Your full plan is summarized above and ready to be exported.
+            </p>
         `;
     }
 
@@ -280,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Toggle visibility
         resultsSection.classList.add('hidden');
-        diagnosticTool.classList.remove('hidden');
+        diagnosticTool.classList.remove('form-hidden'); // <-- REMOVE NEW CLASS
         
         // Display the first step
         displayStep(0);
