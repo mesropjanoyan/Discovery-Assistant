@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allActivities = [];
     let currentStepIndex = 0;
     let userPlan = []; // To store answers for the export feature
+    let lastRecommendedActivities = []; // To store recommended activities for export
 
     // --- 2. DOM ELEMENT SELECTION ---
     // Get references to all the interactive elements on the page
@@ -138,8 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get the key we're looking for, e.g., "framing"
         const failedKey = failedStep.csvKey;
         
-        // Find all matching activities (case-insensitive)
-        const filteredActivities = allActivities.filter(activity => {
+        // Store filtered activities in our module-level variable
+        lastRecommendedActivities = allActivities.filter(activity => {
             // Normalize the activity's step to lowercase, e.g., "framing", "core techniques"
             const activityStepLower = activity.step.toLowerCase();
             
@@ -151,13 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Update preamble
         const preamble = document.getElementById('results-preamble');
-        preamble.textContent = `You need help with "${failedStep.title}". Here are ${filteredActivities.length} activities that can help:`;
+        preamble.textContent = `You need help with "${failedStep.title}". Here are ${lastRecommendedActivities.length} activities that can help:`;
         
         // Clear previous results
         resultsList.innerHTML = '';
         
         // Build HTML cards for each activity
-        filteredActivities.forEach(activity => {
+        lastRecommendedActivities.forEach(activity => {
             const card = document.createElement('div');
             card.className = 'activity-card';
             card.innerHTML = `
@@ -171,6 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             resultsList.appendChild(card);
         });
+        
+        // Add this failure to the userPlan for export
+        // Check if it's already added (prevents duplicates)
+        const lastPlanItem = userPlan[userPlan.length - 1];
+        if (!lastPlanItem || lastPlanItem.step !== failedStep.title) {
+            userPlan.push({
+                step: failedStep.title,
+                question: failedStep.question,
+                answer: "I need help with this step.",
+                confidence: "N/A"
+            });
+        }
     }
 
     /**
@@ -196,25 +209,50 @@ document.addEventListener('DOMContentLoaded', () => {
      * Exports the user's plan as a text file
      */
     function exportPlan() {
-        let planText = '=== DISCOVERY ASSISTANT - YOUR PLAN ===\n\n';
+        let textContent = "My Discovery Assistant Plan\n";
+        textContent += "==============================\n\n";
+
+        // 1. Add all the user's confident answers
+        textContent += "## Your Confident Answers ##\n\n";
         
-        userPlan.forEach((entry, index) => {
-            planText += `STEP ${index + 1}: ${entry.step}\n`;
-            planText += `Question: ${entry.question}\n`;
-            planText += `Your Answer: ${entry.answer}\n`;
-            planText += `Confidence: ${entry.confidence}/5\n\n`;
-        });
-        
-        planText += `Generated: ${new Date().toLocaleString()}\n`;
-        
-        // Create and download file
-        const blob = new Blob([planText], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `discovery-plan-${Date.now()}.txt`;
-        a.click();
-        URL.revokeObjectURL(url);
+        const confidentAnswers = userPlan.filter(item => item.confidence !== "N/A");
+
+        if (confidentAnswers.length > 0) {
+            confidentAnswers.forEach(item => {
+                textContent += `--- STEP: ${item.step} ---\n`;
+                textContent += `Question: ${item.question}\n`;
+                textContent += `Answer: ${item.answer}\n`;
+                textContent += `Confidence: ${item.confidence} / 5\n\n`;
+            });
+        } else {
+            textContent += "No confident answers were provided.\n\n";
+        }
+
+        // 2. Add the recommended activities (if any)
+        if (lastRecommendedActivities.length > 0) {
+            // Find the step title that failed
+            const failedStep = userPlan.find(item => item.confidence === "N/A");
+            const stepTitle = failedStep ? failedStep.step : "your final step";
+
+            textContent += `## Recommended Activities for: ${stepTitle} ##\n\n`;
+            
+            lastRecommendedActivities.forEach(activity => {
+                textContent += `--- ${activity.name} ---\n`;
+                textContent += `Category: ${activity.step}\n`;
+                textContent += `Duration: ${activity.duration}\n`;
+                textContent += `About: ${activity.about}\n\n`;
+            });
+        }
+
+        // 3. Create and download the file
+        const blob = new Blob([textContent], { type: 'text/plain' });
+        const anchor = document.createElement('a');
+        anchor.download = 'Discovery-Plan.txt';
+        anchor.href = window.URL.createObjectURL(blob);
+        anchor.style.display = 'none';
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
     }
 
     // --- 4. EVENT LISTENERS ---
@@ -230,12 +268,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // "Start Over" button
     btnRestart.addEventListener('click', () => {
-        // Reset state and show step 0
+        // Reset state
         currentStepIndex = 0;
         userPlan = [];
+        lastRecommendedActivities = [];
+
+        // Reset UI
         summaryList.innerHTML = '';
+        resultsList.innerHTML = '';
+
+        // Toggle visibility
         resultsSection.classList.add('hidden');
         diagnosticTool.classList.remove('hidden');
+        
+        // Display the first step
         displayStep(0);
     });
     
