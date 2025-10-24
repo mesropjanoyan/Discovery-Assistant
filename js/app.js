@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. DOM ELEMENT SELECTION ---
     // Get references to all the interactive elements on the page
-    const stepCard = document.getElementById('step-card');
+    const completedStepsContainer = document.getElementById('completed-steps-container');
+    const currentStepCard = document.getElementById('current-step-card');
     const stepEmoji = document.getElementById('step-emoji');
     const stepTitle = document.getElementById('step-title');
     const stepQuestion = document.getElementById('step-question');
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const diagnosticTool = document.getElementById('diagnostic-tool');
     const resultsSection = document.getElementById('results');
     const resultsList = document.getElementById('results-list');
-    const summaryList = document.getElementById('summary-list');
 
     // --- 3. CORE FUNCTIONS ---
 
@@ -77,53 +77,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
+     * Creates a "frozen" read-only card for a completed step
+     * and appends it to the completed steps container.
+     * @param {object} step - The step object from allSteps
+     * @param {string} answer - The user's provided answer
+     * @param {string} confidence - The user's confidence rating
+     */
+    function createCompletedStepCard(step, answer, confidence) {
+        const card = document.createElement('div');
+        card.className = 'completed-step-card'; // We can style this later
+        
+        // Build the HTML for the completed card
+        card.innerHTML = `
+            <div class="step-card-header">
+                <span class="emoji-large">${step.emoji}</span>
+                <div>
+                    <h2>${step.title}</h2>
+                    <p>${step.question}</p>
+                </div>
+            </div>
+            <div class="step-card-answer">
+                <p><strong>Your Answer:</strong> ${answer}</p>
+                <p><strong>Confidence:</strong> ${confidence} / 5</p>
+            </div>
+        `;
+        
+        // Add a visual separator
+        card.style.borderBottom = '2px solid var(--border-color)';
+        card.style.paddingBottom = '1.5rem';
+        card.style.marginBottom = '1.5rem';
+
+        completedStepsContainer.appendChild(card);
+    }
+
+    /**
      * Gathers user input, checks confidence, and moves to the next step
      * or shows the results.
      */
     function handleSubmit() {
         const answer = stepAnswer.value.trim();
         const confidenceRadio = document.querySelector('input[name="confidence"]:checked');
-        const confidence = confidenceRadio ? parseInt(confidenceRadio.value) : 0;
-        
+        const confidence = confidenceRadio ? confidenceRadio.value : null;
+
         const currentStep = allSteps[currentStepIndex];
-        
-        // Check logic: answer exists AND confidence >= 3
-        if (answer && confidence >= 3) {
-            // User is confident - add to plan and continue
+
+        // Check for "confident" submission
+        if (answer && confidence && parseInt(confidence) >= 3) {
+            // --- THIS IS THE NEW LOGIC ---
+            
+            // 1. Add to our data plan
             userPlan.push({
                 step: currentStep.title,
                 question: currentStep.question,
                 answer: answer,
                 confidence: confidence
             });
-            
-            // Update summary list
-            updateSummaryList();
-            
-            // Move to next step
+
+            // 2. "Freeze" the step we just answered and add it to the DOM
+            createCompletedStepCard(currentStep, answer, confidence);
+
+            // 3. Advance to the next step
             currentStepIndex++;
-            displayStep(currentStepIndex);
+            if (currentStepIndex < allSteps.length) {
+                displayStep(currentStepIndex);
+            } else {
+                showFinalSummary();
+            }
             
         } else {
-            // User needs help - show results
+            // User is not confident or didn't answer
             showResults(currentStep);
         }
-    }
-
-    /**
-     * Updates the summary list to show user's progress
-     */
-    function updateSummaryList() {
-        summaryList.innerHTML = '';
-        
-        userPlan.forEach((entry, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>${entry.step}</strong> — 
-                Confidence: ${entry.confidence}/5
-            `;
-            summaryList.appendChild(li);
-        });
     }
 
     /**
@@ -132,8 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {object} failedStep - The step object from allSteps
      */
     function showResults(failedStep) {
-        // Hide form elements, show results
-        diagnosticTool.classList.add('form-hidden'); // <-- USE NEW CLASS
+        // Hide the form on the *current step*
+        currentStepCard.classList.add('form-hidden');
+        // Also hide the main controls
+        diagnosticTool.classList.add('form-hidden'); 
+
+        // Show the results section
         resultsSection.classList.remove('hidden');
         
         // Get the key we're looking for, e.g., "framing"
@@ -192,10 +220,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * answered confidently.
      */
     function showFinalSummary() {
-        // Hide the form, but keep the summary and final step card visible
-        diagnosticTool.classList.add('form-hidden');
+        // Hide the final step's form and controls
+        currentStepCard.classList.add('form-hidden');
+        diagnosticTool.classList.add('form-hidden'); 
 
-        // Show the results section to display our message
+        // Show the results section
         resultsSection.classList.remove('hidden');
         
         // Update the preamble text
@@ -280,12 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
         lastRecommendedActivities = [];
 
         // Reset UI
-        summaryList.innerHTML = '';
+        completedStepsContainer.innerHTML = ''; // <-- NEW
         resultsList.innerHTML = '';
 
         // Toggle visibility
         resultsSection.classList.add('hidden');
-        diagnosticTool.classList.remove('form-hidden'); // <-- REMOVE NEW CLASS
+        diagnosticTool.classList.remove('form-hidden');
+        currentStepCard.classList.remove('form-hidden'); // <-- NEW
         
         // Display the first step
         displayStep(0);

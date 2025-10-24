@@ -66,14 +66,14 @@ header, footer {
 }
 
 /* ADD THIS NEW CLASS */
-/* This surgically hides just the interactive parts of the tool */
-.form-hidden #answer-form,
-.form-hidden #controls {
+/* This now hides the form and controls for the *current* step */
+#current-step-card.form-hidden #answer-form,
+#diagnostic-tool.form-hidden #controls {
     display: none;
 }
 
-/* --- 4. Diagnostic Card (#step-card) --- */
-#step-card {
+/* --- 4. Diagnostic Card (#current-step-card) --- */
+#current-step-card {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
