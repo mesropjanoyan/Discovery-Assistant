@@ -2,7 +2,7 @@
 
 Discovery Assistant is an AI-powered digital product discovery assistant designed to help facilitators plan, execute, and synthesize high-impact workshops.
 
-**Live Demo** (work in progress): <a href="https://discovery-assistant-cyan.vercel.app" target="_blank">https://discovery-assistant-cyan.vercel.app</a>
+**Live Demo** (work in progress): <a href="https://discovery-assistant-cyan.vercel.app" target="_blank">Discovery Assistant live on Vercel</a>
 
 ## About The Project
 
