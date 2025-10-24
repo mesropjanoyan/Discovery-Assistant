@@ -135,27 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
         diagnosticTool.classList.add('hidden');
         resultsSection.classList.remove('hidden');
         
-        // Filter activities by the failed step's csvKey
-        const matchingActivities = allActivities.filter(activity => 
-            activity.step === failedStep.csvKey
-        );
+        // Get the key we're looking for, e.g., "framing"
+        const failedKey = failedStep.csvKey;
         
-        // Also include universal activities (core techniques and discussions)
-        const universalActivities = allActivities.filter(activity => 
-            activity.step === 'core techniques' || activity.step === 'discussions'
-        );
-        
-        // Combine them
-        const allRelevantActivities = [...matchingActivities, ...universalActivities];
+        // Find all matching activities (case-insensitive)
+        const filteredActivities = allActivities.filter(activity => {
+            // Normalize the activity's step to lowercase, e.g., "framing", "core techniques"
+            const activityStepLower = activity.step.toLowerCase();
+            
+            // Check if it matches the failed step OR the universal categories
+            return activityStepLower === failedKey || 
+                   activityStepLower === "core techniques" || 
+                   activityStepLower === "discussions";
+        });
         
         // Update preamble
         const preamble = document.getElementById('results-preamble');
-        preamble.textContent = `You need help with "${failedStep.title}". Here are ${allRelevantActivities.length} activities that can help:`;
+        preamble.textContent = `You need help with "${failedStep.title}". Here are ${filteredActivities.length} activities that can help:`;
         
-        // Build HTML cards for each activity
+        // Clear previous results
         resultsList.innerHTML = '';
         
-        allRelevantActivities.forEach(activity => {
+        // Build HTML cards for each activity
+        filteredActivities.forEach(activity => {
             const card = document.createElement('div');
             card.className = 'activity-card';
             card.innerHTML = `
