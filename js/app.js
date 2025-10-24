@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong>Category:</strong> ${activity.step}
                 </p>
                 <p class="activity-about">${activity.about}</p>
-                ${activity.description ? `<p class="activity-description">${activity.description}</p>` : ''}
+                <button class="btn-read-more" data-activity-name="${activity.name}">Read More</button>
+                <div class="activity-details hidden"></div>
             `;
             resultsList.appendChild(card);
         });
@@ -287,6 +288,65 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // "Export Plan" button
     btnExport.addEventListener('click', exportPlan);
+
+    // "Read More" button - Event Delegation
+    resultsList.addEventListener('click', (event) => {
+        // Only proceed if a .btn-read-more button was clicked
+        if (!event.target.classList.contains('btn-read-more')) return;
+        
+        const button = event.target;
+        const detailsContainer = button.nextElementSibling;
+        const activityName = button.getAttribute('data-activity-name');
+        
+        // Check if it's already open
+        if (!detailsContainer.classList.contains('hidden')) {
+            // Toggle Off: Close this one
+            detailsContainer.classList.add('hidden');
+            button.textContent = 'Read More';
+            return;
+        }
+        
+        // Toggle On: First close all others
+        const allDetailsContainers = resultsList.querySelectorAll('.activity-details');
+        allDetailsContainers.forEach(container => {
+            if (!container.classList.contains('hidden')) {
+                container.classList.add('hidden');
+                // Find the corresponding button and reset its text
+                const siblingButton = container.previousElementSibling;
+                if (siblingButton && siblingButton.classList.contains('btn-read-more')) {
+                    siblingButton.textContent = 'Read More';
+                }
+            }
+        });
+        
+        // Now open the clicked one
+        // Find the full activity object
+        const activity = allActivities.find(a => a.name === activityName);
+        
+        if (activity) {
+            // Build the details HTML
+            let detailsHTML = '';
+            
+            // Add description if available
+            if (activity.description) {
+                detailsHTML += `<p><strong>Description:</strong> ${activity.description}</p>`;
+            }
+            
+            // Add instructions if available
+            if (activity.instructions && activity.instructions.length > 0) {
+                detailsHTML += '<p><strong>Instructions:</strong></p><ol>';
+                activity.instructions.forEach(instruction => {
+                    detailsHTML += `<li>${instruction}</li>`;
+                });
+                detailsHTML += '</ol>';
+            }
+            
+            // Set the content and show it
+            detailsContainer.innerHTML = detailsHTML;
+            detailsContainer.classList.remove('hidden');
+            button.textContent = 'Read Less';
+        }
+    });
 
     // --- 5. INITIALIZATION ---
     // Start the app!
