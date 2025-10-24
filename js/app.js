@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. DOM ELEMENT SELECTION ---
     // Get references to all the interactive elements on the page
-    const stepCard = document.getElementById('step-card');
+    const completedStepsContainer = document.getElementById('completed-steps-container');
+    const currentStepCard = document.getElementById('current-step-card');
     const stepEmoji = document.getElementById('step-emoji');
     const stepTitle = document.getElementById('step-title');
     const stepQuestion = document.getElementById('step-question');
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const diagnosticTool = document.getElementById('diagnostic-tool');
     const resultsSection = document.getElementById('results');
     const resultsList = document.getElementById('results-list');
-    const summaryList = document.getElementById('summary-list');
 
     // --- 3. CORE FUNCTIONS ---
 
@@ -77,53 +77,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
+     * Creates a "frozen" read-only card for a completed step
+     * and appends it to the completed steps container.
+     * @param {object} step - The step object from allSteps
+     * @param {string} answer - The user's provided answer
+     * @param {string} confidence - The user's confidence rating
+     */
+    function createCompletedStepCard(step, answer, confidence) {
+        const card = document.createElement('div');
+        card.className = 'completed-step-card'; // We can style this later
+        
+        // Build the HTML for the completed card
+        card.innerHTML = `
+            <div class="step-card-header">
+                <span class="emoji-large">${step.emoji}</span>
+                <div>
+                    <h2>${step.title}</h2>
+                    <p>${step.question}</p>
+                </div>
+            </div>
+            <div class="step-card-answer">
+                <p><strong>Your Answer:</strong> ${answer}</p>
+                <p><strong>Confidence:</strong> ${confidence} / 5</p>
+            </div>
+        `;
+        
+        // Add a visual separator
+        card.style.borderBottom = '2px solid var(--border-color)';
+        card.style.paddingBottom = '1.5rem';
+        card.style.marginBottom = '1.5rem';
+
+        completedStepsContainer.appendChild(card);
+    }
+
+    /**
      * Gathers user input, checks confidence, and moves to the next step
      * or shows the results.
      */
     function handleSubmit() {
         const answer = stepAnswer.value.trim();
         const confidenceRadio = document.querySelector('input[name="confidence"]:checked');
-        const confidence = confidenceRadio ? parseInt(confidenceRadio.value) : 0;
-        
+        const confidence = confidenceRadio ? confidenceRadio.value : null;
+
         const currentStep = allSteps[currentStepIndex];
-        
-        // Check logic: answer exists AND confidence >= 3
-        if (answer && confidence >= 3) {
-            // User is confident - add to plan and continue
+
+        // Check for "confident" submission
+        if (answer && confidence && parseInt(confidence) >= 3) {
+            // --- THIS IS THE NEW LOGIC ---
+            
+            // 1. Add to our data plan
             userPlan.push({
                 step: currentStep.title,
                 question: currentStep.question,
                 answer: answer,
                 confidence: confidence
             });
-            
-            // Update summary list
-            updateSummaryList();
-            
-            // Move to next step
+
+            // 2. "Freeze" the step we just answered and add it to the DOM
+            createCompletedStepCard(currentStep, answer, confidence);
+
+            // 3. Advance to the next step
             currentStepIndex++;
-            displayStep(currentStepIndex);
+            if (currentStepIndex < allSteps.length) {
+                displayStep(currentStepIndex);
+            } else {
+                showFinalSummary();
+            }
             
         } else {
-            // User needs help - show results
+            // User is not confident or didn't answer
             showResults(currentStep);
         }
-    }
-
-    /**
-     * Updates the summary list to show user's progress
-     */
-    function updateSummaryList() {
-        summaryList.innerHTML = '';
-        
-        userPlan.forEach((entry, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>${entry.step}</strong> — 
-                Confidence: ${entry.confidence}/5
-            `;
-            summaryList.appendChild(li);
-        });
     }
 
     /**
@@ -132,8 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {object} failedStep - The step object from allSteps
      */
     function showResults(failedStep) {
-        // Hide diagnostic tool, show results
-        diagnosticTool.classList.add('hidden');
+        // Hide the form on the *current step*
+        currentStepCard.classList.add('form-hidden');
+        // Also hide the main controls
+        diagnosticTool.classList.add('form-hidden'); 
+
+        // Show the results section
         resultsSection.classList.remove('hidden');
         
         // Get the key we're looking for, e.g., "framing"
@@ -168,7 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong>Category:</strong> ${activity.step}
                 </p>
                 <p class="activity-about">${activity.about}</p>
-                ${activity.description ? `<p class="activity-description">${activity.description}</p>` : ''}
+                <button class="btn-read-more" data-activity-name="${activity.name}">Read More</button>
+                <div class="activity-details hidden"></div>
             `;
             resultsList.appendChild(card);
         });
@@ -187,21 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Shows final summary when user completes all 7 steps
+     * Displays a final "complete" message when all 7 steps are
+     * answered confidently.
      */
     function showFinalSummary() {
-        diagnosticTool.classList.add('hidden');
+        // Hide the final step's form and controls
+        currentStepCard.classList.add('form-hidden');
+        diagnosticTool.classList.add('form-hidden'); 
+
+        // Show the results section
         resultsSection.classList.remove('hidden');
         
+        // Update the preamble text
         const preamble = document.getElementById('results-preamble');
-        preamble.textContent = '🎉 Congratulations! You\'ve completed the diagnostic. You\'re ready to move forward.';
-        
+        preamble.textContent = "Congratulations!";
+
+        // Clear any previous results and show the success message
         resultsList.innerHTML = `
-            <div class="success-message">
-                <h3>All Steps Completed</h3>
-                <p>You have clear answers and high confidence across all 7 discovery steps.</p>
-                <p>Use the "Export Plan" button below to save your responses.</p>
-            </div>
+            <p style="font-size: 1.1rem; color: var(--text-dark);">
+                You've confidently completed all 7 steps of the diagnostic.
+                Your full plan is summarized above and ready to be exported.
+            </p>
         `;
     }
 
@@ -274,12 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
         lastRecommendedActivities = [];
 
         // Reset UI
-        summaryList.innerHTML = '';
+        completedStepsContainer.innerHTML = ''; // <-- NEW
         resultsList.innerHTML = '';
 
         // Toggle visibility
         resultsSection.classList.add('hidden');
-        diagnosticTool.classList.remove('hidden');
+        diagnosticTool.classList.remove('form-hidden');
+        currentStepCard.classList.remove('form-hidden'); // <-- NEW
         
         // Display the first step
         displayStep(0);
@@ -287,6 +323,60 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // "Export Plan" button
     btnExport.addEventListener('click', exportPlan);
+
+    // Event delegation for "Read More" buttons on the results list
+    resultsList.addEventListener('click', (event) => {
+        // Only act if a "Read More" button was clicked
+        if (!event.target.classList.contains('btn-read-more')) {
+            return;
+        }
+
+        const clickedButton = event.target;
+        const detailsContainer = clickedButton.nextElementSibling;
+        const activityName = clickedButton.dataset.activityName;
+
+        // Check if the clicked one was already open
+        const wasOpen = !detailsContainer.classList.contains('hidden');
+
+        // --- 1. FIRST, CLOSE ALL CARDS ---
+        // Find all detail containers in the resultsList
+        const allDetailContainers = resultsList.querySelectorAll('.activity-details');
+        
+        allDetailContainers.forEach(container => {
+            container.classList.add('hidden');
+            container.innerHTML = ''; // Clear content to save memory
+        });
+
+        // Reset all button texts
+        const allButtons = resultsList.querySelectorAll('.btn-read-more');
+        allButtons.forEach(button => {
+            button.textContent = 'Read More';
+        });
+
+        // --- 2. THEN, IF IT WAS CLOSED, OPEN THE CLICKED ONE ---
+        if (!wasOpen) {
+            // Find the full activity object from our state
+            const activity = allActivities.find(act => act.name === activityName);
+
+            if (activity) {
+                // Build the new HTML for the details
+                let instructionsHTML = activity.instructions.map(step => `<li>${step}</li>`).join('');
+                
+                detailsContainer.innerHTML = `
+                    <p><strong>Description:</strong> ${activity.description || 'No description available.'}</p>
+                    <p><strong>Instructions:</strong></p>
+                    <ol>${instructionsHTML || 'No instructions available.'}</ol>
+                `;
+                
+                // Show the container
+                detailsContainer.classList.remove('hidden');
+                // Update the button text
+                clickedButton.textContent = 'Read Less';
+            }
+        }
+        // If it *was* open, the 'CLOSE ALL' step already handled it,
+        // and it will simply stay closed.
+    });
 
     // --- 5. INITIALIZATION ---
     // Start the app!
