@@ -289,63 +289,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // "Export Plan" button
     btnExport.addEventListener('click', exportPlan);
 
-    // "Read More" button - Event Delegation
+    // Event delegation for "Read More" buttons on the results list
     resultsList.addEventListener('click', (event) => {
-        // Only proceed if a .btn-read-more button was clicked
-        if (!event.target.classList.contains('btn-read-more')) return;
-        
-        const button = event.target;
-        const detailsContainer = button.nextElementSibling;
-        const activityName = button.getAttribute('data-activity-name');
-        
-        // Check if it's already open
-        if (!detailsContainer.classList.contains('hidden')) {
-            // Toggle Off: Close this one
-            detailsContainer.classList.add('hidden');
-            button.textContent = 'Read More';
+        // Only act if a "Read More" button was clicked
+        if (!event.target.classList.contains('btn-read-more')) {
             return;
         }
+
+        const clickedButton = event.target;
+        const detailsContainer = clickedButton.nextElementSibling;
+        const activityName = clickedButton.dataset.activityName;
+
+        // Check if the clicked one was already open
+        const wasOpen = !detailsContainer.classList.contains('hidden');
+
+        // --- 1. FIRST, CLOSE ALL CARDS ---
+        // Find all detail containers in the resultsList
+        const allDetailContainers = resultsList.querySelectorAll('.activity-details');
         
-        // Toggle On: First close all others
-        const allDetailsContainers = resultsList.querySelectorAll('.activity-details');
-        allDetailsContainers.forEach(container => {
-            if (!container.classList.contains('hidden')) {
-                container.classList.add('hidden');
-                // Find the corresponding button and reset its text
-                const siblingButton = container.previousElementSibling;
-                if (siblingButton && siblingButton.classList.contains('btn-read-more')) {
-                    siblingButton.textContent = 'Read More';
-                }
-            }
+        allDetailContainers.forEach(container => {
+            container.classList.add('hidden');
+            container.innerHTML = ''; // Clear content to save memory
         });
-        
-        // Now open the clicked one
-        // Find the full activity object
-        const activity = allActivities.find(a => a.name === activityName);
-        
-        if (activity) {
-            // Build the details HTML
-            let detailsHTML = '';
-            
-            // Add description if available
-            if (activity.description) {
-                detailsHTML += `<p><strong>Description:</strong> ${activity.description}</p>`;
+
+        // Reset all button texts
+        const allButtons = resultsList.querySelectorAll('.btn-read-more');
+        allButtons.forEach(button => {
+            button.textContent = 'Read More';
+        });
+
+        // --- 2. THEN, IF IT WAS CLOSED, OPEN THE CLICKED ONE ---
+        if (!wasOpen) {
+            // Find the full activity object from our state
+            const activity = allActivities.find(act => act.name === activityName);
+
+            if (activity) {
+                // Build the new HTML for the details
+                let instructionsHTML = activity.instructions.map(step => `<li>${step}</li>`).join('');
+                
+                detailsContainer.innerHTML = `
+                    <p><strong>Description:</strong> ${activity.description || 'No description available.'}</p>
+                    <p><strong>Instructions:</strong></p>
+                    <ol>${instructionsHTML || 'No instructions available.'}</ol>
+                `;
+                
+                // Show the container
+                detailsContainer.classList.remove('hidden');
+                // Update the button text
+                clickedButton.textContent = 'Read Less';
             }
-            
-            // Add instructions if available
-            if (activity.instructions && activity.instructions.length > 0) {
-                detailsHTML += '<p><strong>Instructions:</strong></p><ol>';
-                activity.instructions.forEach(instruction => {
-                    detailsHTML += `<li>${instruction}</li>`;
-                });
-                detailsHTML += '</ol>';
-            }
-            
-            // Set the content and show it
-            detailsContainer.innerHTML = detailsHTML;
-            detailsContainer.classList.remove('hidden');
-            button.textContent = 'Read Less';
         }
+        // If it *was* open, the 'CLOSE ALL' step already handled it,
+        // and it will simply stay closed.
     });
 
     // --- 5. INITIALIZATION ---
