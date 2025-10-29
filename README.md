@@ -1,8 +1,8 @@
-# 🧭 Discovery Assistant
+# 🧭 Pathlight
 
-Discovery Assistant is an AI-powered digital product discovery assistant designed to help facilitators plan, execute, and synthesize high-impact workshops.
+Pathlight is an AI-powered digital product discovery assistant designed to help facilitators plan, execute, and synthesize high-impact workshops.
 
-**Live Demo** (work in progress): <a href="https://discovery-assistant-cyan.vercel.app" target="_blank">Discovery Assistant live on Vercel</a>
+**Live Demo** (work in progress): <a href="https://pathlight-cyan.vercel.app" target="_blank">Pathlight live on Vercel</a>
 
 ## About The Project
 
@@ -12,7 +12,7 @@ This project is designed to cut down the busywork and cognitive load associated 
 2.  **Facilitation (Execution):** How do we run the session effectively?
 3.  **Post-Facilitation (Synthesis):** What did we learn? What are our next steps?
 
-Discovery Assistant aims to provide a generative AI-powered tool to assist facilitators through all three phases, starting with the most critical: the **planning** phase.
+Pathlight aims to provide a generative AI-powered tool to assist facilitators through all three phases, starting with the most critical: the **planning** phase.
 
 ---
 

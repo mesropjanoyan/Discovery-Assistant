@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * Exports the user's plan as a text file
      */
     function exportPlan() {
-        let textContent = "My Discovery Assistant Plan\n";
+        let textContent = "My Pathlight Plan\n";
         textContent += "==============================\n\n";
 
         // 1. Add all the user's confident answers
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Create and download the file
         const blob = new Blob([textContent], { type: 'text/plain' });
         const anchor = document.createElement('a');
-        anchor.download = 'Discovery-Plan.txt';
+        anchor.download = 'Pathlight-Plan.txt';
         anchor.href = window.URL.createObjectURL(blob);
         anchor.style.display = 'none';
         document.body.appendChild(anchor);
